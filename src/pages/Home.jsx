@@ -1,14 +1,16 @@
 import React from 'react'
 import { Button, Form, Input } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Home = () => {
 
-  const onFinish = (values) => {
-    console.log('Success:', values);
-    window.location.replace('/game');
+  const navigate = useNavigate();
 
+  const onFinish  =  async (values)  =>  {
+    console.log('Success:', values);
+    navigate('/game',{state:{values}});
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -29,7 +31,7 @@ const Home = () => {
       >
         <Form.Item
           label="Jugador 1"
-          name="payer1"
+          name="player1"
           rules={[{ required: true, message: 'Porfavor ingresa Nombre Jugador 1!' }]}
         >
           <Input required />

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Home from './pages/Home';
 import Game from './pages/Game';
 import 'antd/dist/antd.css'
+import { useState,useEffect } from 'react';
 
 function App() {
   return (

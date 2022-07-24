@@ -1,6 +1,10 @@
 import React from 'react'
 import { Button, Form, Input } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import useGame from '../hooks/useGame';
+import axios from 'axios';
+import { createContext, useEffect, useState } from "react";
+import { IdProvider } from '../context/IdProvider';
 
 
 
@@ -18,6 +22,7 @@ const Home = () => {
   };
 
   return (
+    
     <div style={{ width: '500px', margin: 'auto', position: 'relative', top: '200px', border: '1px solid', backgroundColor: 'white' }}>
       <h1 style={{ textAlign: 'center' }}>Deck of Cards</h1>
       <Form

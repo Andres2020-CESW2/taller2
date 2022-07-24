@@ -4,15 +4,21 @@ import Home from './pages/Home';
 import Game from './pages/Game';
 import 'antd/dist/antd.css'
 import { useState,useEffect } from 'react';
+import {IdProvider} from './context/IdProvider';
+import { RepartirProvider } from './context/RepartirProvider';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/game' element={<Game />} />
-      </Routes>
-    </BrowserRouter>
+    <IdProvider>
+      <RepartirProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/game' element={<Game />} />
+        </Routes>
+      </BrowserRouter>
+      </RepartirProvider>
+    </IdProvider>
   );
 }
 

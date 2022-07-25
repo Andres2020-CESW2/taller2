@@ -43,14 +43,13 @@ const Game = () => {
     let listaGenerica = listCartas;
     const found = listCodigoUno.find(element => element == cards[0].value);
     const found2 = listCodigoDos.find(element => element == cards[1].value);
-    console.log(listCartas);
     if (found != undefined) {
       setCardWinUno(listCartas.find(element => element.value == cards[0].value));
-      alert("Gano el jugador 1");
+      alert(location.state?.values.player1 + " Felicitaciones! Eres el ganador");
     }
     if (found2 != undefined) {
       setCardWinDos(listCartas.find(element => element.value == cards[1].value));
-      alert("Gano el jugador 2");
+      alert(location.state?.values.player2 + " Felicitaciones! Eres el ganador");
     }
     if (cards) {
       listaGenericaUno.push(cards[0].image);
@@ -65,7 +64,6 @@ const Game = () => {
     setListCartasJugadorDos(listaGenericaDos); 
     setListCodigoUno(listaCodigoUno); 
     setListCodigoDos(listaCodigoDos); 
-    console.log(listCodigoUno, listaCodigoDos);
     
     
     setListCartas(listaGenerica);

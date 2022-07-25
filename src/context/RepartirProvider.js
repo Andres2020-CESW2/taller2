@@ -17,10 +17,11 @@ const RepartirProvider = ({children}) => {
         }
     }, [repartir, escuchar]);
     const consultarApi = async () => {
+        const urlRevolver = `http://deckofcardsapi.com/api/deck/${repartir}/shuffle/?remaining=true`;
+        await axios(urlRevolver);
         const url = `http://deckofcardsapi.com/api/deck/${repartir}/draw/?count=2`;
         const {data} = await axios(url);
         setCards(data.cards);
-        console.log(cards[0].image)
     };
   return (
     <RepartirContext.Provider value={{repartir, handleRepartir, cards}}>{children}</RepartirContext.Provider>
